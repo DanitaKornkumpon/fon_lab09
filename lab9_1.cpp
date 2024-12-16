@@ -1,5 +1,5 @@
 #include<iostream>
-#include<iomanip> //For using setw(), setprecision(), ...
+#include<iomanip> 
 using namespace std;
 
 int main(){
