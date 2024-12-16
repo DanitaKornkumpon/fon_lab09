@@ -3,15 +3,15 @@
 using namespace std;
 
 int main(){
-    double principal, interestRate, annualPayment, interest, total, newBalance;
+    double prin, Rate, annual, inter, total, newBa;
     int year = 1;
     
 	cout << "Enter initial loan: ";
-	cin >> principal;
+	cin >> prin;
 	cout << "Enter interest rate per year (%): ";
-	cin >> interestRate;
+	cin >> Rate;
 	cout << "Enter amount you can pay per year: ";
-	cin >> annualPayment;
+	cin >> annual;
 	
 	cout << setw(13) << left << "EndOfYear#"; 
 	cout << setw(13) << left << "PrevBalance"; 
@@ -22,29 +22,26 @@ int main(){
 	cout << "\n";
 	
 
-while (principal > 0) {
-       interest = principal * (interestRate / 100);
-        total = principal + interest;
+while (prin > 0) {
+       inter = prin * (Rate / 100);
+        total = prin + inter;
 
-     
-        double payment = (total < annualPayment) ? total : annualPayment;
-        newBalance = total - payment;
+        double payment = (total < annual) ? total : annual;
+        newBa = total - payment;
 
-	//use 'fixed' and 'setprecision' to fix the number of decimal digits for displaying
-	//you can change input argument of 'setprecision()' to see the effect
 	cout << fixed << setprecision(2); 
 	cout << setw(13) << left << year; 
-	cout << setw(13) << left <<principal;
-	cout << setw(13) << left << interest;
+	cout << setw(13) << left <<prin;
+	cout << setw(13) << left << inter;
 	cout << setw(13) << left << total;
 	cout << setw(13) << left << payment;
-	cout << setw(13) << left << newBalance;
+	cout << setw(13) << left << newBa;
 	cout << "\n";	
 	
 
-        principal = newBalance;
+        prin = newBa;
 
-        if (principal <= 0) break;
+        if (prin <= 0) break;
     year++;
     }
     	return 0;
